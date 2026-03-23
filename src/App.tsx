@@ -504,6 +504,16 @@ export default function App() {
           <p className="text-sm text-neutral-500">
             © 2026 PureBG. Built with React & AI. All rights reserved.
           </p>
+          <div className="mt-4">
+            <a 
+              href="https://www.netlify.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[10px] font-bold uppercase tracking-widest text-neutral-600 transition-colors hover:text-emerald-500"
+            >
+              Optimized for Netlify
+            </a>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# PureBG - AI Background Remover
 
-# Run and deploy your AI Studio app
+Professional-grade background removal powered by AI. Fast, secure, and runs entirely in your browser.
 
-This contains everything you need to run your app locally.
+## 🚀 Deployment to Netlify
 
-View your app in AI Studio: https://ai.studio/apps/feadab5b-6340-432f-a265-497303619c3b
+This project is optimized for Netlify deployment.
 
-## Run Locally
+### 1. Connect to Netlify
+- Push this code to a GitHub/GitLab/Bitbucket repository.
+- Log in to [Netlify](https://www.netlify.com/).
+- Click **"Add new site"** > **"Import an existing project"**.
+- Select your repository.
 
-**Prerequisites:**  Node.js
+### 2. Configure Build Settings
+Netlify should automatically detect the settings from `netlify.toml`, but here they are for reference:
+- **Build Command:** `npm run build`
+- **Publish Directory:** `dist`
 
+### 3. Environment Variables
+If you use any external APIs (like Gemini), add them in the Netlify UI:
+- Go to **Site Settings** > **Environment variables**.
+- Add `GEMINI_API_KEY` (if needed for additional features).
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 4. Important Headers
+The `netlify.toml` file includes specific headers required for high-performance WASM:
+- `Cross-Origin-Opener-Policy: same-origin`
+- `Cross-Origin-Embedder-Policy: require-corp`
+
+These headers enable `SharedArrayBuffer`, which significantly speeds up the AI background removal process.
+
+## 🛠️ Local Development
+```bash
+npm install
+npm run dev
+```
